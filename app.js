@@ -23,4 +23,6 @@ window.addEventListener('hashchange',()=>{const id=decodeURIComponent(location.h
 render();renderTips();if(location.hash)openRecipe(decodeURIComponent(location.hash.slice(1)));
 
 // Restore section anchors after the recipe and tip lists have been populated.
-if(["#recipes","#tips"].includes(location.hash)){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:"instant"}));}
+if(["#recipes","#tips","#how"].includes(location.hash)){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:"instant"}));}
+
+document.addEventListener("click",async e=>{const b=e.target.closest("[data-copy]");if(!b)return;const text=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(text);$("message-copy-status").textContent="ההודעה הועתקה. עכשיו הדביקי אותה בשיחת ניהול האתר והוסיפי את המתכון או הקישור."}catch{$("message-copy-status").textContent="לא הצלחנו להעתיק אוטומטית. סמני את נוסח ההודעה והעתיקי אותו ידנית."}});
