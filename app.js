@@ -21,3 +21,6 @@ $('recipe').addEventListener('click',e=>{if(e.target===$('recipe')){const b=$('r
 document.addEventListener('click',e=>{const target=e.target.closest('[data-recipe]');if(target){e.preventDefault();openRecipe(target.dataset.recipe)}});
 window.addEventListener('hashchange',()=>{const id=decodeURIComponent(location.hash.slice(1));if(RECIPES.some(r=>r.id===id))openRecipe(id)});
 render();renderTips();if(location.hash)openRecipe(decodeURIComponent(location.hash.slice(1)));
+
+// Restore section anchors after the recipe and tip lists have been populated.
+if(["#recipes","#tips"].includes(location.hash)){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:"instant"}));}
