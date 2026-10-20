@@ -61,6 +61,7 @@ $('logout-admin').onclick=()=>{setToken('');showLogin();$('admin-status').textCo
 $('new-recipe').onclick=()=>editRecipe();$('admin-search').oninput=renderAdminList;$('show-deleted').onchange=renderAdminList;
 $('refresh-admin').onclick=async()=>{try{await loadCloud();$('admin-status').textContent='הרשימה עודכנה.';}catch(e){$('admin-status').textContent=e.message;}};
 $('confirm-delete').onclick=async()=>{const b=$('confirm-delete');b.disabled=true;try{await mutate('delete',b.dataset.id);$('delete-confirm').close();$('admin-status').textContent='המתכון הוסר מהאתר. אפשר לשחזר אותו דרך ״מתכונים שנמחקו״.';}catch(e){$('delete-status').textContent=e.message;}finally{b.disabled=false;}};
+$('editor-refresh').onclick=async()=>{try{await loadCloud();$('edit-status').textContent='המחברת עודכנה. הטופס נשאר כפי שהקלדת; בדקי את השינויים לפני שמירה חוזרת.';}catch(e){$('edit-status').textContent=e.message;}};
 $('recipe-editor').onsubmit=async e=>{
  e.preventDefault();const b=$('save-recipe');b.disabled=true;$('edit-status').textContent='שומרת במחברת…';
  try{
