@@ -166,5 +166,12 @@
     "subject": "Fluffy white basmati rice with toasted sliced almonds, dried cranberries and caramelized onion ribbons, no carrots, no meat.",
     "tool": "built-in imagegen",
     "style": "Square natural contemporary cookbook photography, warm ivory table and beige linen, cream ceramics, window light from upper left, centered dish, no text."
+  },
+  {
+    "id": "sesame-chicken",
+    "subject": "Golden fried chicken breast cubes coated in glossy soy and honey sauce, white sesame seeds and sliced spring onion.",
+    "tool": "built-in imagegen",
+    "style": "Natural contemporary cookbook photography, warm cream ceramics and linen, window light, centered serving, landscape 3:2, no text.",
+    "generated_on": "2026-10-21"
   }
 ]
